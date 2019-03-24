@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Multiteca.Models.Juego.ListaJuegoModel>
+@using System.IO
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="repeater-container">
+    @foreach (var item in Model)
+    {
+        <div class="repeater-item">
+            <span class="repeater-item-title">@Html.DisplayFor(modelItem => item.Nombre)</span>
+            <div class="row">
+                <div class="col-md-3">
+                    <img class="repeater-item-image" alt="@item.Nombre" src="@string.Format("/Resources/Juegos/Covers/{0}.jpg", item.Id.ToString())" />
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="form-group col-md-3 repeater-item-data">
+                            <label>@Html.DisplayNameFor(model => model.Coleccion):</label>
+                            <label>@Html.DisplayFor(modelItem => item.Coleccion)</label>
+                        </div>
+                        <div class="form-group col-md-3 repeater-item-data">
+                            <label>@Html.DisplayNameFor(model => model.Saga):</label>
+                            <label>@Html.DisplayFor(modelItem => item.Saga)</label>
+                        </div>
+                        <div class="form-group col-md-3 repeater-item-data">
+                            <label>@Html.DisplayNameFor(model => model.Generos):</label>
+                            <label>@Html.DisplayFor(modelItem => item.Generos)</label>
+                        </div>
+                        <div class="form-group col-md-3 repeater-item-data">
+                            <label>@Html.DisplayNameFor(model => model.Desarrollador):</label>
+                            <label>@Html.DisplayFor(modelItem => item.Desarrollador)</label>
+                        </div>
+                        <div class="form-group col-md-3 repeater-item-data">
+                            <label>@Html.DisplayNameFor(model => model.Distribuidor):</label>
+                            <label>@Html.DisplayFor(modelItem => item.Distribuidor)</label>
+                        </div>
+                        <div class="form-group col-md-3 repeater-item-data">
+                            <label>@Html.DisplayNameFor(model => model.Distribuidor):</label>
+                            <label>@Html.DisplayFor(modelItem => item.Distribuidor)</label>
+                        </div>
+                        <div class="form-group col-md-3 repeater-item-data">
+                            <label>@Html.DisplayNameFor(model => model.Precio):</label>
+                            <label>@Html.DisplayFor(modelItem => item.Precio)</label>
+                        </div>
+                        <div class="form-group col-md-3 repeater-item-data">
+                            <label>@Html.DisplayNameFor(model => model.Estado):</label>
+                            <label>@Html.DisplayFor(modelItem => item.Estado)</label>
+                        </div>
+                        <div class="form-group col-md-12 repeater-item-data">
+                            <label>@Html.DisplayNameFor(model => model.Review):</label>
+                            <label>@Html.DisplayFor(modelItem => item.Review)</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="repeater-item-buttoncase col-md-12">
+                            @Html.ActionLink(" ", "Edit", new { id = item.Id }, new { @class = "glyphicon glyphicon-pencil btn btn-primary" })
+                            @Html.ActionLink(" ", "Delete", new { id = item.Id }, new { @class = "glyphicon glyphicon-trash btn btn-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

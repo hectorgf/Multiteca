@@ -1,0 +1,43 @@
+﻿.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.repeater-container {
+    border-bottom: 1px solid #999999;
+    margin-bottom: 15px;
+}
+
+    .repeater-container .repeater-item {
+        margin-top: 10px;
+        border-top: 1px solid #999999;
+    }
+
+        .repeater-container .repeater-item .repeater-item-title {
+            font-size: 1.3em;
+            color: #999999;
+        }
+
+        .repeater-container .repeater-item .repeater-item-image {
+            display: block;
+            height: 230px;
+            padding: 10px 5px;
+            margin: auto;
+        }
+
+        .repeater-container .repeater-item .repeater-item-data {
+            font-size: 0.8em;
+        }
+
+            .repeater-container .repeater-item .repeater-item-data label:first-child {
+                font-weight: bold;
+            }
+
+        .repeater-container .repeater-item .repeater-item-buttoncase {
+            text-align: center;
+        }
+
+            .repeater-container .repeater-item .repeater-item-buttoncase a {
+                display: inline-block; 
+                margin: auto 5px;
+            }
