@@ -23,7 +23,10 @@ namespace Multiteca.Controllers.Juego
         {
             JuegoModel juego = JuegoService.GetById(id);
             
-            ViewBag.Coleccion = new SelectList(JuegoService.ColeccionList(), "Id", "Nombre", juego.Coleccion.Id.ToString());
+            ViewBag.Coleccion = new SelectList(JuegoService.ColeccionList(), "Id", "Nombre", juego.Coleccion);
+            ViewBag.Desarrollador = new SelectList(JuegoService.DesarrolladorList(), "Id", "Nombre", juego.Desarrollador);
+            ViewBag.Distribuidor = new SelectList(JuegoService.DistribuidorList(), "Id", "Nombre", juego.Distribuidor);
+            ViewBag.PlataformaDeseada = new SelectList(JuegoService.PlataformaList(), "Id", "Nombre", juego.PlataformaDeseada);
 
             return View("Edit", juego);
         }

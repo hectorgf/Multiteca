@@ -8,7 +8,13 @@ namespace Multiteca.Services
     {
         JuegoModel GetById(Guid id);
         List<ListaJuegoModel> GetList();
-
         List<ColeccionModel> ColeccionList();
+        List<DesarrolladorModel> DesarrolladorList();
+        List<DistribuidorModel> DistribuidorList();
+        List<FormatoModel> FormatoList();
+        List<GeneroModel> GeneroList();
+        List<SagaModel> SagaList();
+        List<TiendaModel> TiendaList();
+        List<PlataformaModel> PlataformaList();
     }
 }
