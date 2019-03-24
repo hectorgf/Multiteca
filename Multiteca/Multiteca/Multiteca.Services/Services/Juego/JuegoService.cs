@@ -1,10 +1,8 @@
 ﻿using AutoMapper;
 using Multiteca.Models.Juego;
-using Multiteca.Repositories;
-using NHibernate.Util;
+using Multiteca.Repositories.Juego;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Multiteca.Services
 {

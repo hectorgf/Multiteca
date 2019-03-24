@@ -2,11 +2,11 @@
 using System;
 using System.Collections.Generic;
 
-namespace Multiteca.Repositories
+namespace Multiteca.Repositories.Juego
 {
     public interface IDesarrolladorRepository
     {
-        //void Create(JuegoEntity entity);
+        //void Create(DesarrolladorEntity entity);
         IEnumerable<DesarrolladorEntity> GetList();
         DesarrolladorEntity GetById(Guid id);
     }

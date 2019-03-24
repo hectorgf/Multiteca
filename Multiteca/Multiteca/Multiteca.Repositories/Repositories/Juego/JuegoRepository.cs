@@ -4,7 +4,7 @@ using NHibernateApp.Persistence;
 using System;
 using System.Collections.Generic;
 
-namespace Multiteca.Repositories
+namespace Multiteca.Repositories.Juego
 {
     public class JuegoRepository : IJuegoRepository
     {
