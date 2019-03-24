@@ -6,7 +6,9 @@ namespace Multiteca.Services
 {
     public interface IJuegoService
     {
-        List<ListaJuegoModel> GetList();
         JuegoModel GetById(Guid id);
+        List<ListaJuegoModel> GetList();
+
+        List<ColeccionModel> ColeccionList();
     }
 }

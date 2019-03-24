@@ -1,27 +1,67 @@
 ﻿using AutoMapper;
-using Multiteca.Models;
-using NHibernate.Entities;
+using Multiteca.Models.Juego;
+using NHibernate.Entities.Juego;
+using System.Linq;
 
-//namespace Multiteca.Services.Profile
-//{    public class MappingProfile : Profile
-//    {
-//        public MappingProfile()
-//        {
-//            CreateMap<Company, CompanyFormViewModel>()
-//               .ForMember(vm => vm.Id, map => map.MapFrom(m => m.Id))
-//               .ForMember(vm => vm.Name, map => map.MapFrom(m => m.Name))
-//               .ForMember(vm => vm.Owner, map => map.MapFrom(m => m.Owner))
-//               .ForMember(vm => vm.Email, map => map.MapFrom(m => m.Email))
-//               .ForMember(vm => vm.Password, map => map.MapFrom(m => m.Password))
-//               .ForMember(vm => vm.Address, map => map.MapFrom(m => m.Address));
-//            CreateMap<CompanyFormViewModel, Company>()
-//               .ForMember(m => m.Id, map => map.MapFrom(vm => vm.Id))
-//               .ForMember(m => m.Name, map => map.MapFrom(vm => vm.Name))
-//               .ForMember(m => m.Owner, map => map.MapFrom(vm => vm.Owner))
-//               .ForMember(m => m.Email, map => map.MapFrom(vm => vm.Email))
-//               .ForMember(m => m.Password, map => map.MapFrom(vm => vm.Password))
-//               .ForMember(m => m.Address, map => map.MapFrom(vm => vm.Address));
+namespace Multiteca.Services.Profiles
+{
+    public class JuegoProfile : Profile
+    {
+        private const string NOT_DATA = "-";
 
-//        }
-//    }
-//}
+        public JuegoProfile()
+        {
+            CreateMap<JuegoModel, JuegoEntity>();
+            CreateMap<JuegoEntity, JuegoModel>()
+                .ForMember(dest => dest.Saga, opt => opt.MapFrom(src => src.Saga.FirstOrDefault()));
+
+            CreateMap<ListaJuegoModel, JuegoEntity>();
+            CreateMap<JuegoEntity, ListaJuegoModel>()
+                .ForMember(dest => dest.Coleccion, opt => opt.MapFrom(src => src.Coleccion != null ? src.Coleccion.Nombre : NOT_DATA))
+                .ForMember(dest => dest.Desarrollador, opt => opt.MapFrom(src => src.Desarrollador != null ? src.Desarrollador.Nombre : NOT_DATA))
+                .ForMember(dest => dest.Distribuidor, opt => opt.MapFrom(src => src.Distribuidor != null ? src.Distribuidor.Nombre : NOT_DATA))
+                .ForMember(dest => dest.Estado, opt => opt.MapFrom(src => (EstadoJuego)src.Estado))
+                .ForMember(dest => dest.Precio, opt => opt.MapFrom(src => src.PrecioPropuesto))
+                .ForMember(dest => dest.Generos, opt => opt.Ignore())
+                .ForMember(dest => dest.Saga, opt => opt.MapFrom(src => src.Saga.FirstOrDefault() != null ? src.Saga.FirstOrDefault().Nombre : NOT_DATA))
+                .ForMember(dest => dest.Review, opt => opt.MapFrom(src => string.IsNullOrEmpty(src.ReviewFinal) ? src.ReviewJugado : src.ReviewFinal))
+                .AfterMap((src, dest) => {
+                    if (src.Generos != null && src.Generos.Count > 0)
+                    {
+                        foreach (var genero in src.Generos)
+                        {
+                            dest.Generos += genero.Nombre + ", ";
+                        }
+                        dest.Generos = dest.Generos.Substring(0, dest.Generos.Length - 2);
+                    }
+                    else
+                        dest.Generos = NOT_DATA;
+                });
+
+            CreateMap<ColeccionModel, ColeccionEntity>();
+            CreateMap<ColeccionEntity, ColeccionModel>()
+                .ForMember(dest => dest.Saga, opt => opt.MapFrom(src => src.Saga.FirstOrDefault()));
+
+            CreateMap<DesarrolladorModel, DesarrolladorEntity>();
+            CreateMap<DesarrolladorEntity, DesarrolladorModel>();
+
+            CreateMap<DistribuidorModel, DistribuidorEntity>();
+            CreateMap<DistribuidorEntity, DistribuidorModel>();
+
+            CreateMap<FormatoModel, FormatoEntity>();
+            CreateMap<FormatoEntity, FormatoModel>();
+
+            CreateMap<GeneroModel, GeneroEntity>();
+            CreateMap<GeneroEntity, GeneroModel>();
+
+            CreateMap<PlataformaModel, PlataformaEntity>();
+            CreateMap<PlataformaEntity, PlataformaModel>();
+
+            CreateMap<SagaModel, SagaEntity>();
+            CreateMap<SagaEntity, SagaModel>();
+
+            CreateMap<TiendaModel, TiendaEntity>();
+            CreateMap<TiendaEntity, TiendaModel>();
+        }
+    }
+}

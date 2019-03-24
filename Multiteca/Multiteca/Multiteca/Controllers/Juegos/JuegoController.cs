@@ -1,8 +1,8 @@
-﻿using Multiteca.Models;
-using Multiteca.Models.Juego;
+﻿using Multiteca.Models.Juego;
 using Multiteca.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace Multiteca.Controllers.Juego
@@ -22,6 +22,9 @@ namespace Multiteca.Controllers.Juego
         public ActionResult Edit(Guid id)
         {
             JuegoModel juego = JuegoService.GetById(id);
+            
+            ViewBag.Coleccion = new SelectList(JuegoService.ColeccionList(), "Id", "Nombre", juego.Coleccion.Id.ToString());
+
             return View("Edit", juego);
         }
 
@@ -30,7 +33,7 @@ namespace Multiteca.Controllers.Juego
         {
             return View();
         }
-       
+
         // GET: ListaJuego/Delete/5
         public ActionResult Delete(int id)
         {

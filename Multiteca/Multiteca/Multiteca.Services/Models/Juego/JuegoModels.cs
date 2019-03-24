@@ -127,13 +127,14 @@ namespace Multiteca.Models.Juego
 
     public class ColeccionModel : BaseNameDescModel
     {
-
+        [DisplayName("Saga")]
+        public virtual SagaModel Saga { get; set; } 
     }
 
     public class SagaModel : BaseNameDescModel
     {
-        public virtual JuegoModel Juego { get; set; }
-        public virtual ColeccionModel Coleccion { get; set; }
+        //public virtual JuegoModel Juego { get; set; }
+        //public virtual ColeccionModel Coleccion { get; set; }
     }
 
     public class TiendaModel : BaseNameDescModel

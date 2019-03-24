@@ -15,11 +15,11 @@
             @Html.TextBoxFor(model => model.FechaLanzamiento, null, new { @class = "form-control" })
         </div>
 
-        <div class="form-group col-md-3">
-            @Html.LabelFor(model => model.Coleccion)
-            @* COLECCIÓN *@
-        </div>
-        <div class="form-group col-md-3">
+		<div class="form-group col-md-4">
+			@Html.LabelFor(model => model.Coleccion)
+			@Html.DropDownListFor(model => model.Coleccion, (IEnumerable<SelectListItem>)ViewBag.Coleccion, "- Seleccione -", new { @class = "form-control" })
+		</div>
+        <div class="form-group col-md-2">
             @Html.LabelFor(model => model.NumColeccion)
             @Html.TextBoxFor(model => model.NumColeccion, null, new { @class = "form-control" })
         </div>

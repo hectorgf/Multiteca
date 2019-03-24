@@ -592,3 +592,6 @@ D:\Desarrollo\Multiteca\Multiteca\Multiteca\Multiteca\Multiteca\obj\Debug\Multit
 D:\Desarrollo\Multiteca\Multiteca\Multiteca\Multiteca\Multiteca\obj\Debug\Multiteca.csproj.CopyComplete
 D:\Desarrollo\Multiteca\Multiteca\Multiteca\Multiteca\Multiteca\obj\Debug\Multiteca.dll
 D:\Desarrollo\Multiteca\Multiteca\Multiteca\Multiteca\Multiteca\obj\Debug\Multiteca.pdb
+D:\Desarrollo\Multiteca\Multiteca\Multiteca\Multiteca\bin\AutoMapper.dll
+D:\Desarrollo\Multiteca\Multiteca\Multiteca\Multiteca\bin\AutoMapper.pdb
+D:\Desarrollo\Multiteca\Multiteca\Multiteca\Multiteca\bin\AutoMapper.xml

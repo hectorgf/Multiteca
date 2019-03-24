@@ -609,7 +609,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "a/iSwnRZb+LHFk49hQOyThh/ZNC3vsbZsF65XwQIb863qF6msmhdQtxGXFL28Ob2NsCz/drEj28BJd/YPpLRBg==",
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -800,7 +800,7 @@
       ]
     },
     "Remotion.Linq/2.2.0": {
-      "sha512": "twDAH8dAXXCAf3sRv1Tf94u66eEHvgU75hfn1nn2v4fSWXD50XoDOAk8WpSrbViNuMkB4kN1ElnOGm1c519IHg==",
+      "sha512": "fK/76UmpC0FXBlGDFVPLJHQlDLYnGC+XY3eoDgCgbtrhi0vzbXDQ3n/IYHhqSKqXQfGw/u04A1drWs7rFVkRjw==",
       "type": "package",
       "path": "remotion.linq/2.2.0",
       "files": [
@@ -2380,11 +2380,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Desarrollo\\Multiteca\\Multiteca\\Multiteca\\Multiteca\\Multiteca.Repositories\\Multiteca.Repositories.csproj",
+      "projectUniqueName": "D:\\Desarrollo\\Multiteca\\Multiteca\\Multiteca\\Multiteca.Repositories\\Multiteca.Repositories.csproj",
       "projectName": "Multiteca.Repositories",
-      "projectPath": "D:\\Desarrollo\\Multiteca\\Multiteca\\Multiteca\\Multiteca\\Multiteca.Repositories\\Multiteca.Repositories.csproj",
+      "projectPath": "D:\\Desarrollo\\Multiteca\\Multiteca\\Multiteca\\Multiteca.Repositories\\Multiteca.Repositories.csproj",
       "packagesPath": "C:\\Users\\hecto\\.nuget\\packages\\",
-      "outputPath": "D:\\Desarrollo\\Multiteca\\Multiteca\\Multiteca\\Multiteca\\Multiteca.Repositories\\obj\\",
+      "outputPath": "D:\\Desarrollo\\Multiteca\\Multiteca\\Multiteca\\Multiteca.Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
