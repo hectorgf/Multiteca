@@ -22,11 +22,15 @@ namespace Multiteca.Controllers.Juego
         public ActionResult Edit(Guid id)
         {
             JuegoModel juego = JuegoService.GetById(id);
-            
+
+            ViewBag.Saga = new SelectList(JuegoService.SagaList(), "Id", "Nombre", juego.Saga != null ? juego.Saga : juego.Coleccion != null ? juego.Coleccion.Saga : null);
             ViewBag.Coleccion = new SelectList(JuegoService.ColeccionList(), "Id", "Nombre", juego.Coleccion);
             ViewBag.Desarrollador = new SelectList(JuegoService.DesarrolladorList(), "Id", "Nombre", juego.Desarrollador);
             ViewBag.Distribuidor = new SelectList(JuegoService.DistribuidorList(), "Id", "Nombre", juego.Distribuidor);
             ViewBag.PlataformaDeseada = new SelectList(JuegoService.PlataformaList(), "Id", "Nombre", juego.PlataformaDeseada);
+            ViewBag.Tienda = new SelectList(JuegoService.TiendaList(), "Id", "Nombre", juego.TiendaComprado);
+            ViewBag.PlataformaCompra = new SelectList(JuegoService.PlataformaList(), "Id", "Nombre", juego.PlataformaCompra);
+            ViewBag.FormatoCompra = new SelectList(JuegoService.FormatoList(), "Id", "Nombre", juego.FormatoCompra);
 
             return View("Edit", juego);
         }

@@ -1,55 +1,141 @@
 ﻿@model Multiteca.Models.Juego.JuegoModel
 
 <div class="row">
-    <h2>@Model.Nombre</h2>
+	<h2>@Model.Nombre</h2>
 </div>
 
 <form>
-    <div class="row">
-        <div class="form-group col-md-8">
-            @Html.LabelFor(model => model.Nombre)
-            @Html.TextBoxFor(model => model.Nombre, null, new { @class = "form-control" })
-        </div>
-        <div class="form-group col-md-4">
-            @Html.LabelFor(model => model.FechaLanzamiento)
-            @Html.TextBoxFor(model => model.FechaLanzamiento, null, new { @class = "form-control" })
-        </div>
 
+	<script type="text/javascript">
+		$(document).ready(function () {
+			if ($('#Deseado').prop('checked') == false) {
+				$('.compra-input').attr('disabled', 'disabled');
+			}
+			else {
+				$('.compra-input').removeAttr("disabled");
+			}
+
+			if ($('#Deseado').prop('checked') == false) {
+				$('.deseado-input').attr('disabled', 'disabled');
+			}
+			else {
+				$('.deseado-input').removeAttr('disabled');
+			}
+
+			$('#Deseado').change(function () {
+				if ($('#Deseado').prop('checked') == false) {
+					$('.deseado-input').attr('disabled', 'disabled');
+				}
+				else {
+					$('.deseado-input').removeAttr('disabled');
+				}
+			});
+
+			$('#Comprado').change(function () {
+				if ($('#Comprado').prop('checked') == false) {
+					$('.compra-input').attr('disabled', 'disabled');
+				}
+				else {
+					$('.compra-input').removeAttr("disabled");
+				}
+			});
+
+			$('.input-checkbox-container').click(function () {
+				if ($(this).hasClass('active')) {
+					$(this).removeClass('active');
+					$(this).contents('input').prop('checked', false);
+				}
+				else {
+					$(this).addClass('active');
+					$(this).contents('input').prop('checked', true);
+				}
+			});
+		});
+	</script>
+
+	<div class="row">
+		<div class="form-group col-md-8">
+			@Html.LabelFor(model => model.Nombre)
+			@Html.TextBoxFor(model => model.Nombre, null, new { @class = "form-control" })
+		</div>
 		<div class="form-group col-md-4">
+			@Html.LabelFor(model => model.FechaLanzamiento)
+			@Html.TextBoxFor(model => model.FechaLanzamiento, null, new { @class = "form-control" })
+		</div>
+
+		<div class="form-group col-md-5">
+			@Html.LabelFor(model => model.Saga)
+			@Html.DropDownListFor(model => model.Saga, (IEnumerable<SelectListItem>)ViewBag.Saga, "- Seleccione -", new { @class = "form-control" })
+		</div>
+		<div class="form-group col-md-5">
 			@Html.LabelFor(model => model.Coleccion)
 			@Html.DropDownListFor(model => model.Coleccion, (IEnumerable<SelectListItem>)ViewBag.Coleccion, "- Seleccione -", new { @class = "form-control" })
 		</div>
-        <div class="form-group col-md-2">
-            @Html.LabelFor(model => model.NumColeccion)
-            @Html.TextBoxFor(model => model.NumColeccion, null, new { @class = "form-control" })
-        </div>
-		<div class="form-group col-md-3">
+		<div class="form-group col-md-2">
+			@Html.LabelFor(model => model.NumColeccion)
+			@Html.TextBoxFor(model => model.NumColeccion, null, new { @class = "form-control" })
+		</div>
+
+		<div class="form-group col-md-5">
 			@Html.LabelFor(model => model.Desarrollador)
 			@Html.DropDownListFor(model => model.Desarrollador, (IEnumerable<SelectListItem>)ViewBag.Desarrollador, "- Seleccione -", new { @class = "form-control" })
 		</div>
-		<div class="form-group col-md-3">
+		<div class="form-group col-md-5">
 			@Html.LabelFor(model => model.Distribuidor)
 			@Html.DropDownListFor(model => model.Distribuidor, (IEnumerable<SelectListItem>)ViewBag.Distribuidor, "- Seleccione -", new { @class = "form-control" })
 		</div>
 
-        <div class="form-group col-md-3">
-            @Html.LabelFor(model => model.PrecioPropuesto)
-            @Html.TextBoxFor(model => model.PrecioPropuesto, null, new { @class = "form-control" })
-        </div>
-    </div>
+		<div class="form-group col-md-2">
+			@Html.LabelFor(model => model.PrecioPropuesto)
+			@Html.TextBoxFor(model => model.PrecioPropuesto, null, new { @class = "form-control" })
+		</div>
+	</div>
 
-    <fieldset class="border col-md-12">
-        <legend class="col-md-3">Deseado</legend>
-        <div class="row">
-            <div class="form-group col-md-12">
-                @Html.LabelFor(model => model.Deseado)
-                @Html.CheckBoxFor(model => model.Deseado, new { @class = "form-group", @style = "vertical-align: bottom;" })
-            </div>
-
-			<div class="form-group col-md-3">
-				@Html.LabelFor(model => model.PlataformaDeseada)
-				@Html.DropDownListFor(model => model.PlataformaDeseada, (IEnumerable<SelectListItem>)ViewBag.PlataformaDeseada, "- Seleccione -", new { @class = "form-control" })
+	<fieldset class="border col-md-12">
+		<legend class="col-md-3">Deseado</legend>
+		<div class="row">
+			<div class="form-group col-md-12">
+				<div class="input-checkbox-container">
+					<i class="glyphicon glyphicon-ok"></i>
+					@Html.CheckBoxFor(model => model.Deseado, new { @class = "form-group" })
+				</div>
+				@Html.LabelFor(model => model.Deseado)
 			</div>
-        </div>
-    </fieldset>
+
+			<div class="form-group col-md-4">
+				@Html.LabelFor(model => model.PlataformaDeseada)
+				@Html.DropDownListFor(model => model.PlataformaDeseada, (IEnumerable<SelectListItem>)ViewBag.PlataformaDeseada, "- Seleccione -", new { @class = "form-control deseado-input" })
+			</div>
+		</div>
+	</fieldset>
+
+	<fieldset class="border col-md-12">
+		<legend class="col-md-3">Comprado</legend>
+		<div class="row">
+			<div class="form-group col-md-12">
+				<div class="input-checkbox-container">
+					<i class="glyphicon glyphicon-ok"></i>
+					@Html.CheckBoxFor(model => model.Comprado, new { @class = "form-group input-checkbox" })
+				</div>
+				@Html.LabelFor(model => model.Comprado)
+			</div>
+
+			<div class="form-group col-md-4">
+				@Html.LabelFor(model => model.TiendaComprado)
+				@Html.DropDownListFor(model => model.TiendaComprado, (IEnumerable<SelectListItem>)ViewBag.Tienda, "- Seleccione -", new { @class = "form-control compra-input" })
+			</div>
+			<div class="form-group col-md-2">
+				@Html.LabelFor(model => model.PrecioCompra)
+				@Html.TextBoxFor(model => model.PrecioCompra, null, new { @class = "form-control compra-input" })
+			</div>
+			<div class="form-group col-md-3">
+				@Html.LabelFor(model => model.PlataformaCompra)
+				@Html.DropDownListFor(model => model.PlataformaCompra, (IEnumerable<SelectListItem>)ViewBag.PlataformaCompra, "- Seleccione -", new { @class = "form-control compra-input" })
+			</div>
+			<div class="form-group col-md-3">
+				@Html.LabelFor(model => model.FormatoCompra)
+				@Html.DropDownListFor(model => model.FormatoCompra, (IEnumerable<SelectListItem>)ViewBag.FormatoCompra, "- Seleccione -", new { @class = "form-control compra-input" })
+			</div>
+		</div>
+	</fieldset>
 </form>
