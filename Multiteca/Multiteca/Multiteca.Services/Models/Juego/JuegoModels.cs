@@ -25,6 +25,8 @@ namespace Multiteca.Models.Juego
 
         [DisplayName("Colección")]
         public virtual ColeccionModel Coleccion { get; set; }
+        
+        public virtual string ColeccionId { get; set; }
 
         [DisplayName("Nº de colección")]
         public virtual int NumColeccion { get; set; }
@@ -32,8 +34,12 @@ namespace Multiteca.Models.Juego
         [DisplayName("Desarrollador")]
         public virtual DesarrolladorModel Desarrollador { get; set; }
 
+        public virtual string DesarrolladorId { get; set; }
+
         [DisplayName("Distribuidor")]
         public virtual DistribuidorModel Distribuidor { get; set; }
+
+        public virtual string DistribuidorId { get; set; }
 
         [DisplayName("Precio propuesto")]
         public virtual decimal PrecioPropuesto { get; set; }
@@ -44,11 +50,15 @@ namespace Multiteca.Models.Juego
         [DisplayName("Plataforma deseada")]
         public virtual PlataformaModel PlataformaDeseada { get; set; }
 
+        public virtual string PlataformaDeseadaId { get; set; }
+
         [DisplayName("Comprado")]
         public virtual bool Comprado { get; set; }
 
         [DisplayName("Tienda")]
         public virtual TiendaModel TiendaComprado { get; set; }
+
+        public virtual string TiendaCompradoId { get; set; }
 
         [DisplayName("Precio")]
         public virtual decimal PrecioCompra { get; set; }
@@ -56,8 +66,12 @@ namespace Multiteca.Models.Juego
         [DisplayName("Plataforma")]
         public virtual PlataformaModel PlataformaCompra { get; set; }
 
+        public virtual string PlataformaCompraId { get; set; }
+
         [DisplayName("Formato")]
         public virtual FormatoModel FormatoCompra { get; set; }
+
+        public virtual string FormatoCompraId { get; set; }
 
         [DisplayName("Estado")]
         public virtual EstadoJuego Estado { get; set; }
@@ -88,6 +102,8 @@ namespace Multiteca.Models.Juego
 
         [DisplayName("Saga")]
         public virtual SagaModel Saga { get; set; }
+
+        public virtual string SagaId { get; set; }
     }
 
     public class ListaJuegoModel

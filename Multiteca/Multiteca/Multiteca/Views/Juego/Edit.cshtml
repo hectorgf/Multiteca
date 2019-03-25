@@ -5,7 +5,6 @@
 </div>
 
 <form>
-
 	<script type="text/javascript">
 		$(document).ready(function () {
 			if ($('#Deseado').prop('checked') == false) {
@@ -39,19 +38,12 @@
 					$('.compra-input').removeAttr("disabled");
 				}
 			});
-
-			$('.input-checkbox-container').click(function () {
-				if ($(this).hasClass('active')) {
-					$(this).removeClass('active');
-					$(this).contents('input').prop('checked', false);
-				}
-				else {
-					$(this).addClass('active');
-					$(this).contents('input').prop('checked', true);
-				}
-			});
 		});
 	</script>
+
+	<div class="row">
+
+	</div>
 
 	<div class="row">
 		<div class="form-group col-md-8">
@@ -65,11 +57,11 @@
 
 		<div class="form-group col-md-5">
 			@Html.LabelFor(model => model.Saga)
-			@Html.DropDownListFor(model => model.Saga, (IEnumerable<SelectListItem>)ViewBag.Saga, "- Seleccione -", new { @class = "form-control" })
+			@Html.DropDownListFor(model => model.SagaId, (IEnumerable<SelectListItem>)ViewBag.Saga, "- Seleccione -", new { @class = "form-control" })
 		</div>
 		<div class="form-group col-md-5">
 			@Html.LabelFor(model => model.Coleccion)
-			@Html.DropDownListFor(model => model.Coleccion, (IEnumerable<SelectListItem>)ViewBag.Coleccion, "- Seleccione -", new { @class = "form-control" })
+			@Html.DropDownListFor(model => model.ColeccionId, (IEnumerable<SelectListItem>)ViewBag.Coleccion, "- Seleccione -", new { @class = "form-control" })
 		</div>
 		<div class="form-group col-md-2">
 			@Html.LabelFor(model => model.NumColeccion)
@@ -78,11 +70,11 @@
 
 		<div class="form-group col-md-5">
 			@Html.LabelFor(model => model.Desarrollador)
-			@Html.DropDownListFor(model => model.Desarrollador, (IEnumerable<SelectListItem>)ViewBag.Desarrollador, "- Seleccione -", new { @class = "form-control" })
+			@Html.DropDownListFor(model => model.DesarrolladorId, (IEnumerable<SelectListItem>)ViewBag.Desarrollador, "- Seleccione -", new { @class = "form-control" })
 		</div>
 		<div class="form-group col-md-5">
 			@Html.LabelFor(model => model.Distribuidor)
-			@Html.DropDownListFor(model => model.Distribuidor, (IEnumerable<SelectListItem>)ViewBag.Distribuidor, "- Seleccione -", new { @class = "form-control" })
+			@Html.DropDownListFor(model => model.DistribuidorId, (IEnumerable<SelectListItem>)ViewBag.Distribuidor, "- Seleccione -", new { @class = "form-control" })
 		</div>
 
 		<div class="form-group col-md-2">
@@ -92,7 +84,7 @@
 	</div>
 
 	<fieldset class="border col-md-12">
-		<legend class="col-md-3">Deseado</legend>
+		<legend>Deseado</legend>
 		<div class="row">
 			<div class="form-group col-md-12">
 				<div class="input-checkbox-container">
@@ -104,13 +96,13 @@
 
 			<div class="form-group col-md-4">
 				@Html.LabelFor(model => model.PlataformaDeseada)
-				@Html.DropDownListFor(model => model.PlataformaDeseada, (IEnumerable<SelectListItem>)ViewBag.PlataformaDeseada, "- Seleccione -", new { @class = "form-control deseado-input" })
+				@Html.DropDownListFor(model => model.PlataformaDeseadaId, (IEnumerable<SelectListItem>)ViewBag.PlataformaDeseada, "- Seleccione -", new { @class = "form-control deseado-input" })
 			</div>
 		</div>
 	</fieldset>
 
 	<fieldset class="border col-md-12">
-		<legend class="col-md-3">Comprado</legend>
+		<legend>Comprado</legend>
 		<div class="row">
 			<div class="form-group col-md-12">
 				<div class="input-checkbox-container">
@@ -122,7 +114,7 @@
 
 			<div class="form-group col-md-4">
 				@Html.LabelFor(model => model.TiendaComprado)
-				@Html.DropDownListFor(model => model.TiendaComprado, (IEnumerable<SelectListItem>)ViewBag.Tienda, "- Seleccione -", new { @class = "form-control compra-input" })
+				@Html.DropDownListFor(model => model.TiendaCompradoId, (IEnumerable<SelectListItem>)ViewBag.Tienda, "- Seleccione -", new { @class = "form-control compra-input" })
 			</div>
 			<div class="form-group col-md-2">
 				@Html.LabelFor(model => model.PrecioCompra)
@@ -130,11 +122,11 @@
 			</div>
 			<div class="form-group col-md-3">
 				@Html.LabelFor(model => model.PlataformaCompra)
-				@Html.DropDownListFor(model => model.PlataformaCompra, (IEnumerable<SelectListItem>)ViewBag.PlataformaCompra, "- Seleccione -", new { @class = "form-control compra-input" })
+				@Html.DropDownListFor(model => model.PlataformaCompraId, (IEnumerable<SelectListItem>)ViewBag.PlataformaCompra, "- Seleccione -", new { @class = "form-control compra-input" })
 			</div>
 			<div class="form-group col-md-3">
 				@Html.LabelFor(model => model.FormatoCompra)
-				@Html.DropDownListFor(model => model.FormatoCompra, (IEnumerable<SelectListItem>)ViewBag.FormatoCompra, "- Seleccione -", new { @class = "form-control compra-input" })
+				@Html.DropDownListFor(model => model.FormatoCompraId, (IEnumerable<SelectListItem>)ViewBag.FormatoCompra, "- Seleccione -", new { @class = "form-control compra-input" })
 			</div>
 		</div>
 	</fieldset>

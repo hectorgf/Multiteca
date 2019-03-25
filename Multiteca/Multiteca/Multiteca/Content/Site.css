@@ -3,6 +3,14 @@
 	padding-right: 15px;
 }
 
+/*SOBRESCRITURA DE LOS ESTILOS DE BOOTSTRAP*/
+legend {
+	width: auto;
+	padding: 0px 5px;
+}
+/*FIN DE LA SOBRESCRITURA DE LOS ESTILOS DE BOOTSTRAP*/
+
+/*GESTIÓN DEL REPEATER*/
 .repeater-container {
 	border-bottom: 1px solid #999999;
 	margin-bottom: 15px;
@@ -42,6 +50,9 @@
 				margin: auto 5px;
 			}
 
+/*FIN DE LA GESTIÓN DEL REPEATER*/
+
+/*GESTIÓN DE LOS CHECKBOX*/
 .input-checkbox-container {
 	border: 1px solid #000000;
 	display: inline-block;
@@ -50,13 +61,23 @@
 
 	.input-checkbox-container.active {
 		background-color: #666666;
-		color: #FFFFFF;
 		cursor: pointer;
 	}
 
 	.input-checkbox-container i {
 		padding: 5px;
 		font-size: 0.75em;
+		color: transparent;
+	}
+
+	.input-checkbox-container:hover i {
+		color: #00000033;
+	}
+
+	.input-checkbox-container.active i {
+		padding: 5px;
+		font-size: 0.75em;
+		color: #FFFFFF;
 	}
 
 	.input-checkbox-container input {
@@ -66,3 +87,4 @@
 	.input-checkbox-container .glyphicon {
 		top: 0;
 	}
+/*FIN DE LA GESTIÓN DE LOS CHECKBOX*/
