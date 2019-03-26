@@ -6,6 +6,7 @@
 
 <form>
 	<script type="text/javascript">
+
 		$(document).ready(function () {
 			if ($('#Deseado').prop('checked') == false) {
 				$('.compra-input').attr('disabled', 'disabled');
@@ -42,92 +43,100 @@
 	</script>
 
 	<div class="row">
-
-	</div>
-
-	<div class="row">
-		<div class="form-group col-md-8">
-			@Html.LabelFor(model => model.Nombre)
-			@Html.TextBoxFor(model => model.Nombre, null, new { @class = "form-control" })
-		</div>
-		<div class="form-group col-md-4">
-			@Html.LabelFor(model => model.FechaLanzamiento)
-			@Html.TextBoxFor(model => model.FechaLanzamiento, null, new { @class = "form-control" })
-		</div>
-
-		<div class="form-group col-md-5">
-			@Html.LabelFor(model => model.Saga)
-			@Html.DropDownListFor(model => model.SagaId, (IEnumerable<SelectListItem>)ViewBag.Saga, "- Seleccione -", new { @class = "form-control" })
-		</div>
-		<div class="form-group col-md-5">
-			@Html.LabelFor(model => model.Coleccion)
-			@Html.DropDownListFor(model => model.ColeccionId, (IEnumerable<SelectListItem>)ViewBag.Coleccion, "- Seleccione -", new { @class = "form-control" })
-		</div>
-		<div class="form-group col-md-2">
-			@Html.LabelFor(model => model.NumColeccion)
-			@Html.TextBoxFor(model => model.NumColeccion, null, new { @class = "form-control" })
-		</div>
-
-		<div class="form-group col-md-5">
-			@Html.LabelFor(model => model.Desarrollador)
-			@Html.DropDownListFor(model => model.DesarrolladorId, (IEnumerable<SelectListItem>)ViewBag.Desarrollador, "- Seleccione -", new { @class = "form-control" })
-		</div>
-		<div class="form-group col-md-5">
-			@Html.LabelFor(model => model.Distribuidor)
-			@Html.DropDownListFor(model => model.DistribuidorId, (IEnumerable<SelectListItem>)ViewBag.Distribuidor, "- Seleccione -", new { @class = "form-control" })
-		</div>
-
-		<div class="form-group col-md-2">
-			@Html.LabelFor(model => model.PrecioPropuesto)
-			@Html.TextBoxFor(model => model.PrecioPropuesto, null, new { @class = "form-control" })
-		</div>
-	</div>
-
-	<fieldset class="border col-md-12">
-		<legend>Deseado</legend>
-		<div class="row">
-			<div class="form-group col-md-12">
-				<div class="input-checkbox-container">
-					<i class="glyphicon glyphicon-ok"></i>
-					@Html.CheckBoxFor(model => model.Deseado, new { @class = "form-group" })
+		<div class="col-md-3">
+			<div class="row">
+				<div class="col-md-12 img-form-container">
+					<img id="GameCover" src="@string.Format("/Resources/Juegos/Covers/{0}.jpg", Model.Id.ToString())" />
+					<input id="GameCoverFileUpload" type="file" />
 				</div>
-				@Html.LabelFor(model => model.Deseado)
-			</div>
-
-			<div class="form-group col-md-4">
-				@Html.LabelFor(model => model.PlataformaDeseada)
-				@Html.DropDownListFor(model => model.PlataformaDeseadaId, (IEnumerable<SelectListItem>)ViewBag.PlataformaDeseada, "- Seleccione -", new { @class = "form-control deseado-input" })
 			</div>
 		</div>
-	</fieldset>
 
-	<fieldset class="border col-md-12">
-		<legend>Comprado</legend>
-		<div class="row">
-			<div class="form-group col-md-12">
-				<div class="input-checkbox-container">
-					<i class="glyphicon glyphicon-ok"></i>
-					@Html.CheckBoxFor(model => model.Comprado, new { @class = "form-group input-checkbox" })
+		<div class="col-md-9">
+			<div class="row">
+				<div class="form-group col-md-8">
+					@Html.LabelFor(model => model.Nombre)
+					@Html.TextBoxFor(model => model.Nombre, null, new { @class = "form-control" })
 				</div>
-				@Html.LabelFor(model => model.Comprado)
-			</div>
+				<div class="form-group col-md-4">
+					@Html.LabelFor(model => model.FechaLanzamiento)
+					@Html.TextBoxFor(model => model.FechaLanzamiento, null, new { @class = "form-control" })
+				</div>
 
-			<div class="form-group col-md-4">
-				@Html.LabelFor(model => model.TiendaComprado)
-				@Html.DropDownListFor(model => model.TiendaCompradoId, (IEnumerable<SelectListItem>)ViewBag.Tienda, "- Seleccione -", new { @class = "form-control compra-input" })
-			</div>
-			<div class="form-group col-md-2">
-				@Html.LabelFor(model => model.PrecioCompra)
-				@Html.TextBoxFor(model => model.PrecioCompra, null, new { @class = "form-control compra-input" })
-			</div>
-			<div class="form-group col-md-3">
-				@Html.LabelFor(model => model.PlataformaCompra)
-				@Html.DropDownListFor(model => model.PlataformaCompraId, (IEnumerable<SelectListItem>)ViewBag.PlataformaCompra, "- Seleccione -", new { @class = "form-control compra-input" })
-			</div>
-			<div class="form-group col-md-3">
-				@Html.LabelFor(model => model.FormatoCompra)
-				@Html.DropDownListFor(model => model.FormatoCompraId, (IEnumerable<SelectListItem>)ViewBag.FormatoCompra, "- Seleccione -", new { @class = "form-control compra-input" })
+				<div class="form-group col-md-5">
+					@Html.LabelFor(model => model.Saga)
+					@Html.DropDownListFor(model => model.SagaId, (IEnumerable<SelectListItem>)ViewBag.Saga, "- Seleccione -", new { @class = "form-control" })
+				</div>
+				<div class="form-group col-md-5">
+					@Html.LabelFor(model => model.Coleccion)
+					@Html.DropDownListFor(model => model.ColeccionId, (IEnumerable<SelectListItem>)ViewBag.Coleccion, "- Seleccione -", new { @class = "form-control" })
+				</div>
+				<div class="form-group col-md-2">
+					@Html.LabelFor(model => model.NumColeccion)
+					@Html.TextBoxFor(model => model.NumColeccion, null, new { @class = "form-control" })
+				</div>
+
+				<div class="form-group col-md-5">
+					@Html.LabelFor(model => model.Desarrollador)
+					@Html.DropDownListFor(model => model.DesarrolladorId, (IEnumerable<SelectListItem>)ViewBag.Desarrollador, "- Seleccione -", new { @class = "form-control" })
+				</div>
+				<div class="form-group col-md-5">
+					@Html.LabelFor(model => model.Distribuidor)
+					@Html.DropDownListFor(model => model.DistribuidorId, (IEnumerable<SelectListItem>)ViewBag.Distribuidor, "- Seleccione -", new { @class = "form-control" })
+				</div>
+				<div class="form-group col-md-2">
+					<label for="PrecioPropuesto">Precio prop.</label>
+					@Html.TextBoxFor(model => model.PrecioPropuesto, null, new { @class = "form-control" })
+				</div>
 			</div>
 		</div>
-	</fieldset>
+
+		<fieldset class="border col-md-12">
+			<legend>Deseado</legend>
+			<div class="row">
+				<div class="form-group col-md-12">
+					<div class="input-checkbox-container">
+						<i class="glyphicon glyphicon-ok"></i>
+						@Html.CheckBoxFor(model => model.Deseado, new { @class = "form-group" })
+					</div>
+					@Html.LabelFor(model => model.Deseado)
+				</div>
+
+				<div class="form-group col-md-4">
+					@Html.LabelFor(model => model.PlataformaDeseada)
+					@Html.DropDownListFor(model => model.PlataformaDeseadaId, (IEnumerable<SelectListItem>)ViewBag.PlataformaDeseada, "- Seleccione -", new { @class = "form-control deseado-input" })
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset class="border col-md-12">
+			<legend>Comprado</legend>
+			<div class="row">
+				<div class="form-group col-md-12">
+					<div class="input-checkbox-container">
+						<i class="glyphicon glyphicon-ok"></i>
+						@Html.CheckBoxFor(model => model.Comprado, new { @class = "form-group input-checkbox" })
+					</div>
+					@Html.LabelFor(model => model.Comprado)
+				</div>
+
+				<div class="form-group col-md-4">
+					@Html.LabelFor(model => model.TiendaComprado)
+					@Html.DropDownListFor(model => model.TiendaCompradoId, (IEnumerable<SelectListItem>)ViewBag.Tienda, "- Seleccione -", new { @class = "form-control compra-input" })
+				</div>
+				<div class="form-group col-md-2">
+					@Html.LabelFor(model => model.PrecioCompra)
+					@Html.TextBoxFor(model => model.PrecioCompra, null, new { @class = "form-control compra-input" })
+				</div>
+				<div class="form-group col-md-3">
+					@Html.LabelFor(model => model.PlataformaCompra)
+					@Html.DropDownListFor(model => model.PlataformaCompraId, (IEnumerable<SelectListItem>)ViewBag.PlataformaCompra, "- Seleccione -", new { @class = "form-control compra-input" })
+				</div>
+				<div class="form-group col-md-3">
+					@Html.LabelFor(model => model.FormatoCompra)
+					@Html.DropDownListFor(model => model.FormatoCompraId, (IEnumerable<SelectListItem>)ViewBag.FormatoCompra, "- Seleccione -", new { @class = "form-control compra-input" })
+				</div>
+			</div>
+		</fieldset>
+	</div>
 </form>

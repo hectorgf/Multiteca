@@ -24,7 +24,31 @@
 	});
 }
 
+function InitializeImgFileupload() {
+	$('.img-form-container img').click(function () {
+		var objectId = '#' + $(this).parent().contents('input')[0].id;
+		$(objectId).trigger("click");
+	});
+
+	$('.img-form-container input').change(function () {
+		var input = this;
+		var url = $(this).val();
+
+		var imgId = $(this).parent().contents('img')[0].id;
+
+		var fReader = new FileReader();
+		fReader.readAsDataURL(input.files[0]);
+		fReader.onloadend = function (event) {
+			var img = document.getElementById(imgId);
+			img.src = event.target.result;
+		}
+	});
+}
+
 $(document).ready(function () {
 	//Inicializa los checkbox de la aplicación
 	InitializeCheckbox();	
+
+	//Inicializa los fileupload para imágenes
+	InitializeImgFileupload();
 });

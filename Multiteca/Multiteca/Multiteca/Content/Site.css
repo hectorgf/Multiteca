@@ -88,3 +88,20 @@ legend {
 		top: 0;
 	}
 /*FIN DE LA GESTIÓN DE LOS CHECKBOX*/
+
+/*GESTIÓN DE FILEUPLOAD PARA IMAGEN*/
+.img-form-container {
+	text-align: center;
+}
+
+	.img-form-container input {
+		display: none;
+	}
+
+	.img-form-container img {
+		cursor: pointer;
+		height: 250px;
+		background-color: #999999;
+		min-width: 200px;
+	}
+/*FIN DE LA GESTIÓN DE FILEUPLOAD PARA IMAGEN*/
