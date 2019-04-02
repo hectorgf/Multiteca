@@ -56,6 +56,18 @@ namespace Multiteca.Services
                 throw new NotImplementedException();
             }
         }
+
+        public ColeccionModel GetColeccionById(Guid id)
+        {
+            try
+            {
+                return Mapper.Map<ColeccionModel>(ColeccionRepository.GetById(id));
+            }
+            catch (Exception e)
+            {
+                throw new NotImplementedException();
+            }
+        }
         #endregion
 
         #region Desarrollador

@@ -40,6 +40,7 @@ namespace Multiteca.Services.Profiles
 
             CreateMap<ColeccionModel, ColeccionEntity>();
             CreateMap<ColeccionEntity, ColeccionModel>()
+                .ForMember(dest => dest.SagaId, opt => opt.MapFrom(src => src.Saga.FirstOrDefault().Id))
                 .ForMember(dest => dest.Saga, opt => opt.MapFrom(src => src.Saga.FirstOrDefault()));
 
             CreateMap<DesarrolladorModel, DesarrolladorEntity>();

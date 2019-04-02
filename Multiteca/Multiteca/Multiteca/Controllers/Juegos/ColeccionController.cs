@@ -21,26 +21,38 @@ namespace Multiteca.Controllers.Juego
         // GET: ListaJuego/Edit/5
         public ActionResult Edit(Guid id)
         {
-            JuegoModel juego = JuegoService.GetById(id);
+            ColeccionModel coleccion = JuegoService.GetColeccionById(id);
 
-            return View("Edit", juego);
+            ViewBag.Saga = new SelectList(JuegoService.SagaList(), "Id", "Nombre", coleccion.Saga != null ? coleccion.Saga.Id.ToString() : null);
+
+            return View("Edit", coleccion);
         }
 
-        // GET: ListaJuego/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: ListaJuego/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: ListaJuego/Delete/5
+        // POST: Default/Edit/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Edit(Guid id, FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add update logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Default/Delete/5
+        public ActionResult Delete(Guid id)
+        {
+            return View();
+        }
+
+        // POST: Default/Delete/5
+        [HttpPost]
+        public ActionResult Delete(Guid id, FormCollection collection)
         {
             try
             {

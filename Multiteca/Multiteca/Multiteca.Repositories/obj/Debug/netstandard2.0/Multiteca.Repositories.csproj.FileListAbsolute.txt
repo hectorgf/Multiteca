@@ -25,3 +25,12 @@ D:\Desarrollo\Multiteca\Multiteca\Multiteca\Multiteca\Multiteca.Repositories\obj
 D:\Desarrollo\Multiteca\Multiteca\Multiteca\Multiteca\Multiteca.Repositories\obj\Debug\netstandard2.0\Multiteca.Repositories.AssemblyInfo.cs
 D:\Desarrollo\Multiteca\Multiteca\Multiteca\Multiteca\Multiteca.Repositories\obj\Debug\netstandard2.0\Multiteca.Repositories.dll
 D:\Desarrollo\Multiteca\Multiteca\Multiteca\Multiteca\Multiteca.Repositories\obj\Debug\netstandard2.0\Multiteca.Repositories.pdb
+D:\Desarrollo\Multiteca\Multiteca\Multiteca.Repositories\bin\Debug\netstandard2.0\Multiteca.Repositories.deps.json
+D:\Desarrollo\Multiteca\Multiteca\Multiteca.Repositories\bin\Debug\netstandard2.0\Multiteca.Repositories.dll
+D:\Desarrollo\Multiteca\Multiteca\Multiteca.Repositories\bin\Debug\netstandard2.0\Multiteca.Repositories.pdb
+D:\Desarrollo\Multiteca\Multiteca\Multiteca.Repositories\obj\Debug\netstandard2.0\Multiteca.Repositories.csprojAssemblyReference.cache
+D:\Desarrollo\Multiteca\Multiteca\Multiteca.Repositories\obj\Debug\netstandard2.0\Multiteca.Repositories.csproj.CoreCompileInputs.cache
+D:\Desarrollo\Multiteca\Multiteca\Multiteca.Repositories\obj\Debug\netstandard2.0\Multiteca.Repositories.AssemblyInfoInputs.cache
+D:\Desarrollo\Multiteca\Multiteca\Multiteca.Repositories\obj\Debug\netstandard2.0\Multiteca.Repositories.AssemblyInfo.cs
+D:\Desarrollo\Multiteca\Multiteca\Multiteca.Repositories\obj\Debug\netstandard2.0\Multiteca.Repositories.dll
+D:\Desarrollo\Multiteca\Multiteca\Multiteca.Repositories\obj\Debug\netstandard2.0\Multiteca.Repositories.pdb
