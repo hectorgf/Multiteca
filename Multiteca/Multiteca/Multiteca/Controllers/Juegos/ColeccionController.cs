@@ -19,6 +19,7 @@ namespace Multiteca.Controllers.Juego
         }
 
         // GET: ListaJuego/Edit/5
+        [HttpGet]
         public ActionResult Edit(Guid id)
         {
             ColeccionModel coleccion = JuegoService.GetColeccionById(id);
@@ -30,7 +31,7 @@ namespace Multiteca.Controllers.Juego
 
         // POST: Default/Edit/5
         [HttpPost]
-        public ActionResult Edit(Guid id, FormCollection collection)
+        public ActionResult Edit(Guid id, ColeccionModel coleccion)
         {
             try
             {

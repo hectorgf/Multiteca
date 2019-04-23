@@ -3,6 +3,15 @@
 	padding-right: 15px;
 }
 
+.td-button-case {
+	min-width: 125px;
+	text-align: center;
+}
+
+.td-width-250 {
+	min-width: 250px;
+}
+
 /*SOBRESCRITURA DE LOS ESTILOS DE BOOTSTRAP*/
 legend {
 	width: auto;
