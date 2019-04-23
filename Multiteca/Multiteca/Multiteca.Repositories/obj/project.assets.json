@@ -2380,11 +2380,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Desarrollo\\Multiteca\\Multiteca\\Multiteca.Repositories\\Multiteca.Repositories.csproj",
+      "projectUniqueName": "D:\\Desarrollo\\Multiteca\\Multiteca\\Multiteca\\Multiteca.Repositories\\Multiteca.Repositories.csproj",
       "projectName": "Multiteca.Repositories",
-      "projectPath": "D:\\Desarrollo\\Multiteca\\Multiteca\\Multiteca.Repositories\\Multiteca.Repositories.csproj",
+      "projectPath": "D:\\Desarrollo\\Multiteca\\Multiteca\\Multiteca\\Multiteca.Repositories\\Multiteca.Repositories.csproj",
       "packagesPath": "C:\\Users\\hecto\\.nuget\\packages\\",
-      "outputPath": "D:\\Desarrollo\\Multiteca\\Multiteca\\Multiteca.Repositories\\obj\\",
+      "outputPath": "D:\\Desarrollo\\Multiteca\\Multiteca\\Multiteca\\Multiteca.Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -14,35 +14,25 @@ namespace Multiteca.Controllers.Juego
         // GET: ListaJuego
         public ActionResult Index()
         {
-            List<ColeccionModel> juegos = JuegoService.ColeccionList();
-            return View(juegos);
+            List<ColeccionModel> colecciones = JuegoService.ColeccionList();
+            return View(colecciones);
         }
 
-        // GET: ListaJuego/Edit/5
         [HttpGet]
         public ActionResult Edit(Guid id)
         {
-            ColeccionModel coleccion = JuegoService.GetColeccionById(id);
+            var coleccion = JuegoService.GetColeccionById(id);
 
             ViewBag.Saga = new SelectList(JuegoService.SagaList(), "Id", "Nombre", coleccion.Saga != null ? coleccion.Saga.Id.ToString() : null);
 
             return View("Edit", coleccion);
         }
 
-        // POST: Default/Edit/5
         [HttpPost]
-        public ActionResult Edit(Guid id, ColeccionModel coleccion)
+        public ActionResult Edit(ColeccionModel coleccion)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            List<ColeccionModel> colecciones = JuegoService.ColeccionList();
+            return View("Index", colecciones);
         }
 
         // GET: Default/Delete/5
