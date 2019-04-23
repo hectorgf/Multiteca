@@ -6,12 +6,21 @@ namespace Multiteca.Services
 {
     public interface IJuegoService
     {
+        #region Juegos
         JuegoModel GetById(Guid id);
-        List<ListaJuegoModel> GetList();
 
+        List<ListaJuegoModel> GetList();
+        #endregion Juegos
+
+        #region Coleccion
         List<ColeccionModel> ColeccionList();
+
         ColeccionModel GetColeccionById(Guid id);
 
+        bool ModificarColeccion(ColeccionModel coleccion);
+        #endregion Coleccion
+
+        #region Listas
         List<DesarrolladorModel> DesarrolladorList();
 
         List<DistribuidorModel> DistribuidorList();
@@ -25,5 +34,6 @@ namespace Multiteca.Services
         List<TiendaModel> TiendaList();
 
         List<PlataformaModel> PlataformaList();
+        #endregion Listas
     }
 }

@@ -6,7 +6,7 @@
 
 @using (Html.BeginForm("Edit", "Coleccion", FormMethod.Post))
 {
-    @*@Html.ValidationSummary(true)*@
+    @Html.ValidationSummary(true)
     @Html.HiddenFor(x => x.Id)
 
     <div class="row">

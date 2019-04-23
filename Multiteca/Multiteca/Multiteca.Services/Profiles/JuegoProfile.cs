@@ -38,10 +38,10 @@ namespace Multiteca.Services.Profiles
                         dest.Generos = NOT_DATA;
                 });
 
-            CreateMap<ColeccionModel, ColeccionEntity>();
+            CreateMap<ColeccionModel, ColeccionEntity>()
+                .ForMember(dest => dest.Saga, opt => opt.MapFrom(src => src.Saga));
             CreateMap<ColeccionEntity, ColeccionModel>()
-                .ForMember(dest => dest.SagaId, opt => opt.MapFrom(src => src.Saga.FirstOrDefault().Id))
-                .ForMember(dest => dest.Saga, opt => opt.MapFrom(src => src.Saga.FirstOrDefault()));
+                .ForMember(dest => dest.SagaId, opt => opt.MapFrom(src => src.Saga.Id));
 
             CreateMap<DesarrolladorModel, DesarrolladorEntity>();
             CreateMap<DesarrolladorEntity, DesarrolladorModel>();

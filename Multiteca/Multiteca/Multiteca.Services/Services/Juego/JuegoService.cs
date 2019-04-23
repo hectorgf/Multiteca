@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Multiteca.Models.Juego;
 using Multiteca.Repositories.Juego;
+using NHibernate.Entities.Juego;
 using System;
 using System.Collections.Generic;
 
@@ -67,6 +68,13 @@ namespace Multiteca.Services
             {
                 throw new NotImplementedException();
             }
+        }
+
+        public bool ModificarColeccion(ColeccionModel coleccion)
+        {
+            var editColeccion = Mapper.Map<ColeccionEntity>(coleccion);
+            editColeccion.Saga = SagaRepository.GetById(coleccion.SagaId);
+            return ColeccionRepository.Edit(editColeccion);
         }
         #endregion
 

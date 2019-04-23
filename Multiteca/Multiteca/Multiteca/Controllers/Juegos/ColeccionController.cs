@@ -31,6 +31,8 @@ namespace Multiteca.Controllers.Juego
         [HttpPost]
         public ActionResult Edit(ColeccionModel coleccion)
         {
+            JuegoService.ModificarColeccion(coleccion);
+
             List<ColeccionModel> colecciones = JuegoService.ColeccionList();
             return View("Index", colecciones);
         }

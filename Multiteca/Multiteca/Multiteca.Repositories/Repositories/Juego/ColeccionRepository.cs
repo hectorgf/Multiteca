@@ -9,11 +9,11 @@ namespace Multiteca.Repositories.Juego
     public class ColeccionRepository : IColeccionRepository
     {
 
-        private ISession Session;
+        private ISession _session;
 
         public ColeccionRepository()
         {
-            Session = SessionManager.Instance.Session;
+            _session = SessionManager.Instance.Session;
         }
 
         //public void Create(ColeccionEntity entity)
@@ -32,7 +32,7 @@ namespace Multiteca.Repositories.Juego
         {
             try
             {
-                ICriteria criteria = Session.CreateCriteria(typeof(ColeccionEntity));
+                ICriteria criteria = _session.CreateCriteria(typeof(ColeccionEntity));
                 return criteria.List<ColeccionEntity>();
             }
             catch (Exception e)
@@ -45,11 +45,34 @@ namespace Multiteca.Repositories.Juego
         {
             try
             {
-                return Session.Get<ColeccionEntity>(id);
+                return _session.Get<ColeccionEntity>(id);
             }
             catch (Exception)
             {
 
+                throw new NotImplementedException();
+            }
+        }
+
+        public bool Edit(ColeccionEntity coleccion)
+        {
+            _session.Transaction.Begin();
+
+            try
+            {
+                var editColeccion = this.GetById(coleccion.Id);
+                editColeccion.Nombre = coleccion.Nombre;
+                editColeccion.Descripcion = coleccion.Descripcion;
+                editColeccion.Saga = coleccion.Saga;
+
+                _session.Update(editColeccion);
+                _session.Flush();
+                _session.Transaction.Commit();
+                return true;
+            }
+            catch (Exception e)
+            {  
+                return false;
                 throw new NotImplementedException();
             }
         }
