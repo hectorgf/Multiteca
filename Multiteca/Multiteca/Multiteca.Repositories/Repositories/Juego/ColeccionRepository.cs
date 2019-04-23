@@ -54,6 +54,24 @@ namespace Multiteca.Repositories.Juego
             }
         }
 
+        public bool Create(ColeccionEntity coleccion)
+        {
+            _session.Transaction.Begin();
+
+            try
+            {
+                _session.Save(coleccion);
+                _session.Flush();
+                _session.Transaction.Commit();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+                throw new NotImplementedException();
+            }
+        }
+
         public bool Edit(ColeccionEntity coleccion)
         {
             _session.Transaction.Begin();

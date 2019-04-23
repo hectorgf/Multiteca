@@ -217,6 +217,7 @@
     <Content Include="Views\Juego\Edit.cshtml" />
     <Content Include="Views\Juego\index.cshtml" />
     <Content Include="Views\Coleccion\Edit.cshtml" />
+    <Content Include="Views\Coleccion\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

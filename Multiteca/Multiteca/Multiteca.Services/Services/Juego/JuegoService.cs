@@ -70,11 +70,21 @@ namespace Multiteca.Services
             }
         }
 
+        public bool CrearColeccion(ColeccionModel coleccion)
+        {
+            return ColeccionRepository.Create(TransformColeccion(coleccion));
+        }
+
         public bool ModificarColeccion(ColeccionModel coleccion)
+        {
+            return ColeccionRepository.Edit(TransformColeccion(coleccion));
+        }
+
+        private ColeccionEntity TransformColeccion(ColeccionModel coleccion)
         {
             var editColeccion = Mapper.Map<ColeccionEntity>(coleccion);
             editColeccion.Saga = SagaRepository.GetById(coleccion.SagaId);
-            return ColeccionRepository.Edit(editColeccion);
+            return editColeccion;
         }
         #endregion
 

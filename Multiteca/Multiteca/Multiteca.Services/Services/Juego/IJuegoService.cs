@@ -17,6 +17,8 @@ namespace Multiteca.Services
 
         ColeccionModel GetColeccionById(Guid id);
 
+        bool CrearColeccion(ColeccionModel coleccion);
+
         bool ModificarColeccion(ColeccionModel coleccion);
         #endregion Coleccion
 

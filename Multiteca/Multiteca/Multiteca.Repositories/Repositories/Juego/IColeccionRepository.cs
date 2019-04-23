@@ -9,6 +9,7 @@ namespace Multiteca.Repositories.Juego
         //void Create(ColeccionEntity entity);
         IEnumerable<ColeccionEntity> GetList();
         ColeccionEntity GetById(Guid id);
+        bool Create(ColeccionEntity coleccion);
         bool Edit(ColeccionEntity coleccion);
     }
 }

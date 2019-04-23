@@ -19,12 +19,25 @@ namespace Multiteca.Controllers.Juego
         }
 
         [HttpGet]
+        public ActionResult Create()
+        {
+            ViewBag.Saga = new SelectList(JuegoService.SagaList(), "Id", "Nombre", null);
+            return View("Create", new ColeccionModel());
+        }
+
+        [HttpPost]
+        public ActionResult Create(ColeccionModel coleccion)
+        {
+            JuegoService.CrearColeccion(coleccion);
+            ViewBag.Saga = new SelectList(JuegoService.SagaList(), "Id", "Nombre", coleccion.Saga != null ? coleccion.Saga.Id.ToString() : null);
+            return View("Edit", coleccion);
+        }
+
+        [HttpGet]
         public ActionResult Edit(Guid id)
         {
             var coleccion = JuegoService.GetColeccionById(id);
-
             ViewBag.Saga = new SelectList(JuegoService.SagaList(), "Id", "Nombre", coleccion.Saga != null ? coleccion.Saga.Id.ToString() : null);
-
             return View("Edit", coleccion);
         }
 
