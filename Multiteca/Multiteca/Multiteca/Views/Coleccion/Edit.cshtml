@@ -1,36 +1,34 @@
 ﻿@model Multiteca.Models.Juego.ColeccionModel
 
 <div class="row">
-	<h2>@Model.Nombre</h2>
+    <h2>@Model.Nombre</h2>
 </div>
 
-<form>
-	@using (Html.BeginForm())
-	{
-		@Html.ValidationSummary(true)
-		@Html.HiddenFor(x => x.Id)
+@using (Html.BeginForm("Edit", "Coleccion", FormMethod.Post))
+{
+    @*@Html.ValidationSummary(true)*@
+    @Html.HiddenFor(x => x.Id)
 
-		<div class="row">
-			<div class="form-group col-md-8">
-				@Html.LabelFor(model => model.Nombre):
-				@Html.TextBoxFor(model => model.Nombre, null, new { @class = "form-control" })
-			</div>
-			<div class="form-group col-md-4">
-				@Html.LabelFor(model => model.Saga):
-				@Html.DropDownListFor(model => model.SagaId, (IEnumerable<SelectListItem>)ViewBag.Saga, "- Seleccione -", new { @class = "form-control" })
-			</div>
+    <div class="row">
+        <div class="form-group col-md-8">
+            @Html.LabelFor(model => model.Nombre):
+            @Html.TextBoxFor(model => model.Nombre, null, new { @class = "form-control" })
+        </div>
+        <div class="form-group col-md-4">
+            @Html.LabelFor(model => model.Saga):
+            @Html.DropDownListFor(model => model.SagaId, (IEnumerable<SelectListItem>)ViewBag.Saga, "- Seleccione -", new { @class = "form-control" })
+        </div>
 
-			<div class="form-group col-md-12">
-				@Html.LabelFor(model => model.Descripcion)
-				@Html.TextAreaFor(model => model.Descripcion, new { @class = "form-control", @rows = "3" })
-			</div>
-		</div>
+        <div class="form-group col-md-12">
+            @Html.LabelFor(model => model.Descripcion)
+            @Html.TextAreaFor(model => model.Descripcion, new { @class = "form-control", @rows = "3" })
+        </div>
+    </div>
 
-		<div class="botonera botonera-right">
-			<input type="submit" class="btn btn-success" value="Modificar" />
-			@*@Html.ActionLink("Modificar", "Edit", "Coleccion", new { id = Model.Id, coleccion = Json.Encode(Model) }, new { @class = "btn btn-success" })*@
-			@Html.ActionLink("Borrar", "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" })
-			@Html.ActionLink("Volver", "index", null, new { @class = "btn btn-primary" })
-		</div>
-	}
-</form>
+    <div class="botonera botonera-right">
+        <input type="submit" class="btn btn-success" value="Modificar" />
+        @*@Html.ActionLink("Modificar", "Tururu", "Coleccion", new { id = Model.Id, coleccion = Json.Encode(Model) }, new { @class = "btn btn-success" })*@
+        @Html.ActionLink("Borrar", "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" })
+        @Html.ActionLink("Volver", "index", null, new { @class = "btn btn-primary" })
+    </div>
+}
