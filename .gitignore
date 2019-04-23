@@ -2,7 +2,7 @@
 # Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
 ################################################################################
 
-/Multiteca/Multiteca/.vs/
+/Multiteca/Multiteca/.vs/Multiteca
 /Multiteca/Multiteca.Repositories/bin
 /Multiteca/Multiteca.Repositories/obj
 /Multiteca/Multiteca.Services/bin
