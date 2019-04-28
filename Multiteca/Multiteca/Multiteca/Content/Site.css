@@ -12,6 +12,18 @@
 	min-width: 250px;
 }
 
+.td-width-150 {
+    min-width: 150px;
+}
+
+.td-width-100 {
+    min-width: 150px;
+}
+
+.td-width-50 {
+    min-width: 50px;
+}
+
 /*SOBRESCRITURA DE LOS ESTILOS DE BOOTSTRAP*/
 legend {
 	width: auto;

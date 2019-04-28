@@ -16,18 +16,6 @@ namespace Multiteca.Repositories.Juego
             _session = SessionManager.Instance.Session;
         }
 
-        //public void Create(ColeccionEntity entity)
-        //{
-        //    try
-        //    {
-        //        Session.Save(entity);
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw new NotImplementedException();
-        //    }
-        //}
-
         public IEnumerable<ColeccionEntity> GetList()
         {
             try
@@ -90,6 +78,26 @@ namespace Multiteca.Repositories.Juego
             }
             catch (Exception e)
             {  
+                return false;
+                throw new NotImplementedException();
+            }
+        }
+
+        public bool Delete(ColeccionEntity coleccion)
+        {
+            _session.Transaction.Begin();
+
+            try
+            {
+                var deleteColeccion = this.GetById(coleccion.Id);
+
+                _session.Delete(deleteColeccion);
+                _session.Flush();
+                _session.Transaction.Commit();
+                return true;
+            }
+            catch (Exception e)
+            {
                 return false;
                 throw new NotImplementedException();
             }

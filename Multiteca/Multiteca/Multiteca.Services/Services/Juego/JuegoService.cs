@@ -79,6 +79,11 @@ namespace Multiteca.Services
         {
             return ColeccionRepository.Edit(TransformColeccion(coleccion));
         }
+        
+        public bool EliminarColeccion(ColeccionModel coleccion)
+        {
+            return ColeccionRepository.Delete(TransformColeccion(coleccion));
+        }
 
         private ColeccionEntity TransformColeccion(ColeccionModel coleccion)
         {
@@ -86,7 +91,8 @@ namespace Multiteca.Services
             editColeccion.Saga = SagaRepository.GetById(coleccion.SagaId);
             return editColeccion;
         }
-        #endregion
+
+        #endregion Colección
 
         #region Desarrollador
         public List<DesarrolladorModel> DesarrolladorList()

@@ -53,16 +53,18 @@ namespace Multiteca.Controllers.Juego
         // GET: Default/Delete/5
         public ActionResult Delete(Guid id)
         {
-            return View();
+            var coleccion = JuegoService.GetColeccionById(id);
+            ViewBag.Saga = new SelectList(JuegoService.SagaList(), "Id", "Nombre", coleccion.Saga != null ? coleccion.Saga.Id.ToString() : null);
+            return View("Delete", coleccion);
         }
 
         // POST: Default/Delete/5
         [HttpPost]
-        public ActionResult Delete(Guid id, FormCollection collection)
+        public ActionResult Delete(Guid id, ColeccionModel coleccion)
         {
             try
             {
-                // TODO: Add delete logic here
+                JuegoService.EliminarColeccion(coleccion);
 
                 return RedirectToAction("Index");
             }

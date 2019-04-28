@@ -11,5 +11,6 @@ namespace Multiteca.Repositories.Juego
         ColeccionEntity GetById(Guid id);
         bool Create(ColeccionEntity coleccion);
         bool Edit(ColeccionEntity coleccion);
+        bool Delete(ColeccionEntity coleccion);
     }
 }

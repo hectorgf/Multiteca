@@ -13,6 +13,7 @@ namespace Multiteca.Services
         #endregion Juegos
 
         #region Coleccion
+
         List<ColeccionModel> ColeccionList();
 
         ColeccionModel GetColeccionById(Guid id);
@@ -20,6 +21,9 @@ namespace Multiteca.Services
         bool CrearColeccion(ColeccionModel coleccion);
 
         bool ModificarColeccion(ColeccionModel coleccion);
+
+        bool EliminarColeccion(ColeccionModel coleccion);
+
         #endregion Coleccion
 
         #region Listas
